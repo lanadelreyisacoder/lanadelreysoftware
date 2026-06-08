@@ -1,0 +1,73 @@
+#header 
+{
+    background: linear-gradient(to right, rgb(20, 20, 20) 0%, rgb(20, 20, 20) 33%, rgb(33, 15, 2) 66%, rgb(33, 15, 2) 100%); ;
+}
+
+#title-container 
+{
+    font-size: xx-large;
+    transition: transform 3s ease-in-out;
+}
+
+#title-container.inicio 
+{
+    transform: translateY(50%);
+}
+
+#title-container:hover 
+{
+    transform: translateY(25%);
+}
+
+#menu 
+{
+    display: none;
+}
+
+li 
+{
+    font-size: small;
+    background-color: black;
+    color: blanchedalmond;
+    border: 2px solid blanchedalmond;
+    padding: 5px;
+}
+
+#title-container:hover #translate 
+{
+    display: flex;
+    justify-content: center;
+}
+
+#title-container:hover #menu 
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+hr
+{
+    width: 100vw;
+    height: 5px;
+    border: none;
+    background-color: black;
+    margin: 0;
+    transform-origin: center; /* Cuando transformes este elemento, toma como punto de referencia el centro. */
+    transform: scaleX(0); /* Cuando cargas la página, el <hr> existe, pero está comprimido horizontalmente hasta tener ancho cero. scaleX() escala el ancho del elemento. */
+    animation: expandir 3s ease-out forwards;
+}
+
+@keyframes expandir
+{
+    from
+    {
+        transform: scaleX(0);
+    }
+
+    to
+    {
+        transform: scaleX(1); /* Se escala hasta el 100% de su ancho, el cuál establecimos anteriormente que es todo el ancho visible de la pantalla pero que comenzó en scaleX(0). */
+    }
+}

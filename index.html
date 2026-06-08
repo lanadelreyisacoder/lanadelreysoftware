@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lana Del Rey Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: rgb(203, 208, 190); width: 100vw; height: 100vh; overflow: hidden; margin: 0; display: flex; flex-direction: column;">
+    <div id="header" style="text-align: center; height: auto; display: flex; flex-direction: row;">
+        <div style="flex: 1; background-image: url(Images/Lanita.jpg); background-size: cover; background-position: 0% 50%;"></div>
+        <div style="flex: 1;">
+            <h1 style="color: rgb(203, 208, 190);">Lana Del Rey Software</h1>
+            <p style="color: rgb(203, 208, 190); margin: 0;">
+                a place where Lana´s fans become programmers... teachers said we'd never make it out alive.
+            </p>
+        </div>
+        <div style="flex: 1; background-image: url(Images/Lanita_Stove.jpg); background-size: cover; background-position: 0% 15%;"></div> <!-- left% top% -->
+    </div>
+    <hr>
+
+    <div style="display: flex; justify-content: center; flex: 1;">
+        <div id="border"></div>
+        <div id="title-container">
+            <p id="translate" style="margin: 0; border: 2px solid black; padding: 5px; border-radius: 10px; background-color: blanchedalmond;">Tutorials</p>
+            <ul id="menu" style="list-style: none;">
+                <li><a>Toggle Switch HTML</a></li>
+                <li><a>Open settings.json</a></li>
+                <li><a>Print Quadrangle C#</a></li>
+                <li><a>Print Rhombus C#</a></li>
+                <li><a>How does foreach work in conjunction with IEnumerable?</a></li>
+                <li><a>Ports 67 and 68 DHCP Packet Tracer</a></li>
+                <li><a>For loop in Visual Basic and compiler in Notepad++ NppExec</a></li>
+                <li><a>How do I run a C# file in VS Code without using the C# Dev Kit or .NET Install Tool?</a></li>
+                <li><a>Self-implemented properties and properties with validations</a></li>
+                <li><a>public static simple explanation of the combination</a></li>
+                <li><a>How to install Firebird?</a></li>
+                <li><a>Apache and MySQL loopback</a></li>
+                <li><a>String.Substring method</a></li>
+                <li><a>Cost of Sales (Formula Explanation)</a></li>
+                <li><a>Rule of three (fraction denominator method) with proof</a></li>
+                <li><a>Building a prank mini virus with Batch and VBS</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => 
+        {
+            const titleContainer = document.getElementById("title-container");
+            const border = document.getElementById("border");
+
+            setTimeout(() =>
+            {
+                titleContainer.classList.add("inicio");
+
+                setTimeout(() =>
+                {
+                    titleContainer.style.transition = "transform 1s ease-in-out";
+                }, 3000); // Para que pasados los tres segundos de la animación, las animaciones duren solo un segundo.
+                
+            }, 1); // Para que se espere tantito y el 50% no sobreescriba tan rápido al 0% (altura).
+        });
+    </script>
+</body>
+</html>
