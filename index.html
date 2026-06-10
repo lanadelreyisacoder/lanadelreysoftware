@@ -62,7 +62,9 @@
                 
             }, 1); // Para que se espere tantito y el 50% no sobreescriba tan rápido al 0% (altura).
 
-            titleContainer.addEventListener("click", () =>
+            const translate = document.getElementById("translate");
+
+            translate.addEventListener("click", () =>
             {
                 titleContainer.classList.toggle("activo");
             });
