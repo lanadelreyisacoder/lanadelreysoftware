@@ -14,7 +14,7 @@
     transform: translateY(50%);
 }
 
-#title-container:hover 
+#title-container.activo 
 {
     transform: translateY(25%);
 }
@@ -24,22 +24,23 @@
     display: none;
 }
 
-li 
-{
-    font-size: small;
-    background-color: black;
-    color: blanchedalmond;
-    border: 2px solid blanchedalmond;
-    padding: 5px;
-}
-
-#title-container:hover #translate 
+#title-container.activo #translate
 {
     display: flex;
     justify-content: center;
 }
 
-#title-container:hover #menu 
+#translate
+{
+    cursor: default;
+}
+
+#translate:hover
+{
+    cursor: pointer;
+}
+
+#title-container.activo #menu
 {
     display: flex;
     justify-content: center;
@@ -57,6 +58,15 @@ hr
     transform-origin: center; /* Cuando transformes este elemento, toma como punto de referencia el centro. */
     transform: scaleX(0); /* Cuando cargas la página, el <hr> existe, pero está comprimido horizontalmente hasta tener ancho cero. scaleX() escala el ancho del elemento. */
     animation: expandir 3s ease-out forwards;
+}
+
+li 
+{
+    font-size: small;
+    background-color: black;
+    color: blanchedalmond;
+    border: 2px solid blanchedalmond;
+    padding: 5px;
 }
 
 @keyframes expandir

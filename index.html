@@ -20,7 +20,6 @@
     <hr>
 
     <div style="display: flex; justify-content: center; flex: 1;">
-        <div id="border"></div>
         <div id="title-container">
             <p id="translate" style="margin: 0; border: 2px solid black; padding: 5px; border-radius: 10px; background-color: blanchedalmond;">Tutorials</p>
             <ul id="menu" style="list-style: none;">
@@ -43,11 +42,14 @@
             </ul>
         </div>
     </div>
+
+    <footer style="background-color: black; text-align: center; color: blanchedalmond; padding: 5px;">
+        I'm a freelance programmer, and I'm looking to share my knowledge here in a melancholic way, much like Lana would. I DO NOT REPRESENT ANYONE RELATED TO LANA DEL REY OR HER TEAM.
+    </footer>
     <script>
         document.addEventListener("DOMContentLoaded", () => 
         {
             const titleContainer = document.getElementById("title-container");
-            const border = document.getElementById("border");
 
             setTimeout(() =>
             {
@@ -59,6 +61,11 @@
                 }, 3000); // Para que pasados los tres segundos de la animación, las animaciones duren solo un segundo.
                 
             }, 1); // Para que se espere tantito y el 50% no sobreescriba tan rápido al 0% (altura).
+
+            titleContainer.addEventListener("click", () =>
+            {
+                titleContainer.classList.toggle("activo");
+            });
         });
     </script>
 </body>
