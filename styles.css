@@ -1,22 +1,16 @@
 #header 
 {
-    background: linear-gradient(to right, rgb(20, 20, 20) 0%, rgb(20, 20, 20) 33%, rgb(33, 15, 2) 66%, rgb(33, 15, 2) 100%); ;
+    background: linear-gradient(to right, rgb(20, 20, 20) 0%, rgb(20, 20, 20) 33%, rgb(33, 15, 2) 66%, rgb(33, 15, 2) 100%);
 }
 
 #title-container 
 {
     font-size: xx-large;
-    transition: transform 3s ease-in-out;
 }
 
-#title-container.inicio 
+#title-container:not(.activo)
 {
-    transform: translateY(50%);
-}
-
-#title-container.activo 
-{
-    transform: translateY(25%);
+    animation: aparecer 2s ease-in-out forwards;
 }
 
 #menu 
@@ -24,31 +18,33 @@
     display: none;
 }
 
-#title-container.activo #translate
-{
-    display: flex;
-    justify-content: center;
-}
-
-#translate
+#translate 
 {
     cursor: default;
 }
 
-#translate:hover
+#translate:hover 
 {
     cursor: pointer;
 }
 
-#title-container.activo #menu
+#title-container.activo #translate 
+{
+    display: flex;
+    justify-content: center;
+    animation: aparecer 2s ease-in-out forwards;
+}
+
+#title-container.activo #menu 
 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+    animation: aparecer 2s ease-in-out forwards;
 }
 
-hr
+hr 
 {
     width: 100vw;
     height: 5px;
@@ -69,15 +65,26 @@ li
     padding: 5px;
 }
 
-@keyframes expandir
+@keyframes expandir 
 {
-    from
+    from 
     {
         transform: scaleX(0);
     }
-
-    to
+    to 
     {
         transform: scaleX(1); /* Se escala hasta el 100% de su ancho, el cuál establecimos anteriormente que es todo el ancho visible de la pantalla pero que comenzó en scaleX(0). */
+    }
+}
+
+@keyframes aparecer 
+{
+    from 
+    {
+        opacity: 0;
+    }
+    to 
+    {
+        opacity: 1;
     }
 }
