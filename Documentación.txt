@@ -1,0 +1,28 @@
+Exactamente. 😆
+
+`100vh` ha sido una de las cosas más molestas del desarrollo web móvil durante años. En escritorio, `100vh` suele equivaler al área visible de la ventana y se comporta como uno espera. En móviles, los navegadores intentan lidiar con barras de dirección, barras de navegación, gestos, notch, etc., y terminan haciendo cosas raras.
+
+Por ejemplo, en muchos teléfonos:
+
+* La barra de direcciones visible cuenta para el cálculo de `100vh`.
+* Cuando la barra se oculta al hacer scroll, el alto visible cambia.
+* Algunos navegadores calculan `100vh` usando el tamaño máximo posible de la pantalla y otros usan el tamaño actual.
+* Resultado: elementos cortados, espacios vacíos o footers desaparecidos.
+
+Por eso aparecieron nuevas unidades:
+
+```css
+100svh  /* Small Viewport Height */
+100lvh  /* Large Viewport Height */
+100dvh  /* Dynamic Viewport Height */
+```
+
+Hoy en día, para layouts de pantalla completa, `100dvh` suele ser la opción más fiable:
+
+```css
+height: 100dvh;
+```
+
+Si alguna vez haces una PWA o una web que parezca aplicación móvil, te ahorrarás muchos dolores de cabeza usando `dvh` desde el principio.
+
+Bienvenido a una de las tradiciones más antiguas del desarrollo web: descubrir que algo funciona perfecto en PC y luego abrirlo en un teléfono para que el navegador decida interpretar el CSS como le da la gana. 😭😂
